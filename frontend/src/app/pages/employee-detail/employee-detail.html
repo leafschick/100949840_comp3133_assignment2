@@ -1,1 +1,76 @@
-<p>employee-detail works!</p>
+<div class="detail-page">
+  <header class="topbar">
+    <div class="brand">Coffee House</div>
+
+    <nav class="topnav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/employees">Employees</a>
+      <a routerLink="/add-employee">Add Employee</a>
+      <a routerLink="/login">Logout</a>
+    </nav>
+  </header>
+
+  <div class="detail-container">
+    <div class="page-header">
+      <div>
+        <p class="page-label">Employee Management</p>
+        <h1>Employee Details</h1>
+        <p class="page-subtext">
+          View employee profile information and quick account details.
+        </p>
+      </div>
+
+      <div class="header-actions">
+        <a routerLink="/employees" class="back-btn">Back to Employees</a>
+        <a routerLink="/edit-employee/1" class="edit-btn">Edit Employee</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-left">
+        <div class="avatar">AJ</div>
+        <div>
+          <h2>Alice Johnson</h2>
+          <p class="role-text">Operations Manager</p>
+          <p class="email-text">alice.johnson@test.com</p>
+        </div>
+      </div>
+
+      <div class="status-badge">Active Employee</div>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-box">
+        <h3>Personal Information</h3>
+        <div class="info-row">
+          <span>First Name</span>
+          <strong>Alice</strong>
+        </div>
+        <div class="info-row">
+          <span>Last Name</span>
+          <strong>Johnson</strong>
+        </div>
+        <div class="info-row">
+          <span>Email</span>
+          <strong>alice.johnson@test.com</strong>
+        </div>
+      </div>
+
+      <div class="detail-box">
+        <h3>Work Information</h3>
+        <div class="info-row">
+          <span>Department</span>
+          <strong>Operations</strong>
+        </div>
+        <div class="info-row">
+          <span>Position</span>
+          <strong>Manager</strong>
+        </div>
+        <div class="info-row">
+          <span>Status</span>
+          <strong>Active</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
