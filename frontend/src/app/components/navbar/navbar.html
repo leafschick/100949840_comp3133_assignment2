@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<div class="sidebar">
+  <div>
+    <h3 class="logo">EmployeeApp</h3>
+
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Login</a></li>
+      <li><a routerLink="/signup" routerLinkActive="active-link">Signup</a></li>
+      <li><a routerLink="/employees" routerLinkActive="active-link">Employees</a></li>
+      <li><a routerLink="/add-employee" routerLinkActive="active-link">Add Employee</a></li>
+    </ul>
+  </div>
+
+  <div class="logout-section">
+    <a routerLink="/" class="logout-link">Logout</a>
+  </div>
+</div>
