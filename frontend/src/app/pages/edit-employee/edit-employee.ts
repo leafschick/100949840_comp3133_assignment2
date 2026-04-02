@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-edit-employee',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './edit-employee.html',
-  styleUrl: './edit-employee.css',
+  styleUrls: ['./edit-employee.css']
 })
 export class EditEmployee {}

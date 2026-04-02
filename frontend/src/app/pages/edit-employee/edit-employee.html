@@ -1,1 +1,65 @@
-<p>edit-employee works!</p>
+<div class="edit-page">
+  <header class="topbar">
+    <div class="brand">Coffee House</div>
+
+    <nav class="topnav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/employees">Employees</a>
+      <a routerLink="/add-employee">Add Employee</a>
+      <a routerLink="/login">Logout</a>
+    </nav>
+  </header>
+
+  <div class="edit-container">
+    <div class="page-header">
+      <div>
+        <p class="page-label">Employee Management</p>
+        <h1>Edit Employee</h1>
+        <p class="page-subtext">
+          Update the employee details below and save the changes to the record.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" value="Alice" />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" value="Johnson" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" value="alice.johnson@test.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input id="department" type="text" value="Operations" />
+          </div>
+
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input id="position" type="text" value="Manager" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="image">Update Profile Picture</label>
+            <input id="image" type="file" />
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a routerLink="/employees" class="cancel-btn">Cancel</a>
+          <button type="submit" class="update-btn">Update Employee</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
