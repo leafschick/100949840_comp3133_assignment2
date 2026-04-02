@@ -1,1 +1,44 @@
-<p>signup works!</p>
+<div class="signup-page">
+  <header class="topbar">
+    <div class="brand">Coffee House</div>
+
+    <nav class="topnav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/login">Login</a>
+    </nav>
+  </header>
+
+  <div class="signup-wrapper">
+    <div class="signup-card">
+      <p class="signup-label">Employee Portal</p>
+      <h1>Create Account</h1>
+      <p class="signup-subtext">
+        Sign up to access internal resources, manage employee records, and use the Coffee House portal.
+      </p>
+
+      <form>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" placeholder="Enter your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Create a password" />
+        </div>
+
+        <button type="submit" class="signup-btn">Create Account</button>
+      </form>
+
+      <p class="login-text">
+        Already have an account?
+        <a routerLink="/login">Login here</a>
+      </p>
+    </div>
+  </div>
+</div>
