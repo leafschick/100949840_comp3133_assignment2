@@ -1,1 +1,62 @@
-<p>employee-list works!</p>
+<div class="employee-page">
+  <header class="topbar">
+    <div class="brand">Coffee House</div>
+
+    <nav class="topnav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/employees" class="active-link">Employees</a>
+      <a routerLink="/add-employee">Add Employee</a>
+      <a routerLink="/login">Logout</a>
+    </nav>
+  </header>
+
+  <div class="employee-container">
+    <div class="page-header">
+      <div>
+        <p class="page-label">Employee Management</p>
+        <h1>Employees List</h1>
+        <p class="page-subtext">
+          View employee records, search by role or department, and manage staff details.
+        </p>
+      </div>
+
+      <a routerLink="/add-employee" class="add-btn">+ Add Employee</a>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-group">
+        <input type="text" placeholder="Search by department or position" />
+        <button>Search</button>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Position</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.department }}</td>
+            <td>{{ employee.position }}</td>
+            <td class="actions">
+              <a [routerLink]="['/employee', employee.id]" class="view-btn">View</a>
+              <a [routerLink]="['/edit-employee', employee.id]" class="edit-btn">Edit</a>
+              <button class="delete-btn" type="button">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
