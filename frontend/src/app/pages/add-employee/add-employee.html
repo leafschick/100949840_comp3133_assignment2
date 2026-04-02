@@ -1,1 +1,65 @@
-<p>add-employee works!</p>
+<div class="add-page">
+  <header class="topbar">
+    <div class="brand">Coffee House</div>
+
+    <nav class="topnav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/employees">Employees</a>
+      <a routerLink="/add-employee" class="active-link">Add Employee</a>
+      <a routerLink="/login">Logout</a>
+    </nav>
+  </header>
+
+  <div class="add-container">
+    <div class="page-header">
+      <div>
+        <p class="page-label">Employee Management</p>
+        <h1>Add New Employee</h1>
+        <p class="page-subtext">
+          Fill in the employee details below to create a new employee record.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" placeholder="Enter first name" />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" placeholder="Enter last name" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Enter email address" />
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input id="department" type="text" placeholder="Enter department" />
+          </div>
+
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input id="position" type="text" placeholder="Enter position" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="image">Profile Picture</label>
+            <input id="image" type="file" />
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a routerLink="/employees" class="cancel-btn">Cancel</a>
+          <button type="submit" class="save-btn">Save Employee</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
