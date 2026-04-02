@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="login-page">
+  <header class="topbar">
+    <div class="brand">Coffee House</div>
+
+    <nav class="topnav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/signup">Signup</a>
+    </nav>
+  </header>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+      <p class="login-label">Employee Portal</p>
+      <h1>Welcome Back</h1>
+      <p class="login-subtext">
+        Sign in to access employee resources, manage records, and continue to your dashboard.
+      </p>
+
+      <form>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter your password" />
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+
+      <p class="signup-text">
+        Don’t have an account?
+        <a routerLink="/signup">Create one here</a>
+      </p>
+    </div>
+  </div>
+</div>
