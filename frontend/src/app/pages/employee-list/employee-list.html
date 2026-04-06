@@ -30,7 +30,11 @@
       </div>
     </div>
 
-    <div class="table-card">
+    <p class="loading-message" *ngIf="loading">Loading employees...</p>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+
+    <div class="table-card" *ngIf="!loading && !errorMessage">
       <table>
         <thead>
           <tr>
@@ -54,6 +58,10 @@
               <a [routerLink]="['/edit-employee', employee.id]" class="edit-btn">Edit</a>
               <button class="delete-btn" type="button">Delete</button>
             </td>
+          </tr>
+
+          <tr *nglyIf="employees.length === 0">
+            <td colspan="6" class="no-data">No employees found. Please add new employees.</td>
           </tr>
         </tbody>
       </table>

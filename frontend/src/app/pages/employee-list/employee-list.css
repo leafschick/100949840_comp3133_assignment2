@@ -210,4 +210,26 @@ td {
   .page-header h1 {
     font-size: 34px;
   }
+
+  .loading-message {
+  color: #0b1a33;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.error-message {
+  color: #b42318;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  color: #5c667a;
+  font-weight: 600;
+  padding: 24px;
+}
+
 }
