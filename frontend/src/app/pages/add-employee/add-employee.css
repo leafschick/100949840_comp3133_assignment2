@@ -182,4 +182,19 @@
   .full-width {
     grid-column: span 1;
   }
+
+  .error-message {
+  color: #b42318;
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.success-message {
+  color: #117a4b;
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
 }
