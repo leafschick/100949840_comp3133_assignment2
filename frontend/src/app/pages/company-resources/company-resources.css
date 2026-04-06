@@ -1,0 +1,193 @@
+.resources-page {
+  min-height: 100vh;
+  background: #f3f5f8;
+  font-family: Arial, sans-serif;
+  color: #0f1f3d;
+}
+
+.topbar {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-bottom: 1px solid #e3e7ee;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.brand {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0b1a33;
+}
+
+.topnav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #1b2b45;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.topnav a:hover,
+.active-link {
+  color: #c89211;
+}
+
+.top-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.top-link {
+  text-decoration: none;
+  color: #0b1a33;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+.signup-highlight {
+  background: #f4c542;
+  color: #0b1a33;
+}
+
+.resources-hero {
+  background: #0b2a44;
+  color: white;
+  padding: 70px 40px 60px;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #bcd3e8;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-size: 58px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero-subtext {
+  font-size: 22px;
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #dbe6f2;
+}
+
+.resources-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 50px 40px 70px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-header h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #0b1a33;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #5f6b7d;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.resource-card h3 {
+  font-size: 30px;
+  margin-bottom: 14px;
+  color: #0b1a33;
+}
+
+.resource-card p {
+  font-size: 18px;
+  color: #5c667a;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.resource-card a {
+  text-decoration: none;
+  color: #0b2a44;
+  font-weight: 700;
+}
+
+.resource-card a:hover {
+  color: #c89211;
+}
+
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 44px;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 20px;
+  }
+
+  .resources-hero {
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-subtext {
+    font-size: 18px;
+  }
+
+  .resources-section {
+    padding: 40px 20px 60px;
+  }
+
+  .topnav {
+    gap: 16px;
+  }
+
+  .brand {
+    font-size: 26px;
+  }
+}

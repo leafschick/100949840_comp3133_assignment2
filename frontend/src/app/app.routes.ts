@@ -7,6 +7,8 @@ import { EmployeeList } from './pages/employee-list/employee-list';
 import { AddEmployee } from './pages/add-employee/add-employee';
 import { EditEmployee } from './pages/edit-employee/edit-employee';
 import { EmployeeDetail } from './pages/employee-detail/employee-detail';
+import { CompanyResources } from './pages/company-resources/company-resources';
+import { EmployeeResources } from './pages/employee-resources/employee-resources';
 
 export const routes: Routes = [
   { path: '', component: Homepage },
@@ -15,5 +17,7 @@ export const routes: Routes = [
   { path: 'employees', component: EmployeeList },
   { path: 'add-employee', component: AddEmployee },
   { path: 'edit-employee/:id', component: EditEmployee },
-  { path: 'employee/:id', component: EmployeeDetail }
+  { path: 'employee/:id', component: EmployeeDetail },
+  { path: 'company-resources', component: CompanyResources },
+  { path: 'employee-resources', component: EmployeeResources }
 ];
