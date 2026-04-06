@@ -23,6 +23,18 @@
       <a routerLink="/add-employee" class="add-btn">+ Add Employee</a>
     </div>
 
+    <div class="toolbar">
+      <div class="search-group">
+        <input
+          type="text"
+          placeholder="Search by department or position"
+          [(ngModel)]="searchText"
+          name="searchText"
+        />
+        <button type="button" (click)="searchEmployees()">Search</button>
+      </div>
+    </div>
+
     <p class="loading-message" *ngIf="loading">Loading employees...</p>
     <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
     <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
@@ -51,7 +63,11 @@
             <td class="actions">
               <a [routerLink]="['/employee', employee.id || employee._id]" class="view-btn">View</a>
               <a [routerLink]="['/edit-employee', employee.id || employee._id]" class="edit-btn">Edit</a>
-              <button class="delete-btn" type="button" (click)="deleteEmployee(employee.id || employee._id)">
+              <button
+                class="delete-btn"
+                type="button"
+                (click)="deleteEmployee(employee.id || employee._id)"
+              >
                 Delete
               </button>
             </td>

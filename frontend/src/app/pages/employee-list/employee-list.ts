@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './employee-list.html',
   styleUrls: ['./employee-list.css']
 })
@@ -15,6 +16,8 @@ export class EmployeeList implements OnInit {
   errorMessage = '';
   successMessage = '';
   loading = true;
+
+  searchText = '';
 
   constructor(private employeeService: EmployeeService) {}
 
@@ -33,6 +36,31 @@ export class EmployeeList implements OnInit {
       },
       error: () => {
         this.errorMessage = 'Failed to load employees.';
+        this.loading = false;
+      }
+    });
+  }
+
+  searchEmployees() {
+    const value = this.searchText.trim();
+
+    if (!value) {
+      this.loadEmployees();
+      return;
+    }
+
+    this.loading = true;
+    this.errorMessage = '';
+    this.successMessage = '';
+
+    this.employeeService.searchEmployees(value, value).subscribe({
+      next: (response) => {
+        this.employees = response?.data?.searchEmployees ?? [];
+        this.loading = false;
+      },
+      error: (error) => {
+        console.error('Search employee error:', error);
+        this.errorMessage = 'Failed to search employees.';
         this.loading = false;
       }
     });
