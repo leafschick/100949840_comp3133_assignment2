@@ -13,6 +13,7 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeeList implements OnInit {
   employees: any[] = [];
   errorMessage = '';
+  successMessage = '';
   loading = true;
 
   constructor(private employeeService: EmployeeService) {}
@@ -33,6 +34,37 @@ export class EmployeeList implements OnInit {
       error: () => {
         this.errorMessage = 'Failed to load employees.';
         this.loading = false;
+      }
+    });
+  }
+
+  deleteEmployee(id: string) {
+    const confirmDelete = window.confirm('Are you sure you want to delete this employee?');
+
+    if (!confirmDelete) {
+      return;
+    }
+
+    this.errorMessage = '';
+    this.successMessage = '';
+
+    this.employeeService.deleteEmployee(id).subscribe({
+      next: (response) => {
+        if (response?.data?.deleteEmployee) {
+          this.successMessage = 'Employee deleted successfully!';
+          this.loadEmployees();
+        } else if (response?.errors?.length) {
+          this.errorMessage = response.errors[0].message;
+        } else {
+          this.errorMessage = 'Failed to delete employee.';
+        }
+      },
+      error: (error) => {
+        console.error('Delete employee error:', error);
+        this.errorMessage =
+          error?.error?.errors?.[0]?.message ||
+          error?.message ||
+          'Failed to delete employee.';
       }
     });
   }

@@ -231,5 +231,11 @@ td {
   font-weight: 600;
   padding: 24px;
 }
+.success-message {
+  color: #117a4b;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
 
 }
