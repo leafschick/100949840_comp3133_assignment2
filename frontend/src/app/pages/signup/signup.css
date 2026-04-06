@@ -155,4 +155,19 @@
   .signup-card h1 {
     font-size: 34px;
   }
+
+  .error-message {
+  color: #b42318;
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.success-message {
+  color: #117a4b;
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
 }

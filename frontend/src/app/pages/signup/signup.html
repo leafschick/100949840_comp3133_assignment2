@@ -16,20 +16,20 @@
         Sign up to access internal resources, manage employee records, and use the Coffee House portal.
       </p>
 
-      <form>
+      <form (ngSubmit)="onSignup()">
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input id="fullName" type="text" placeholder="Enter your full name" />
+         <input id="fullName" type="text" placeholder="Enter your full name"  [(ngModel)]="fullName" name="fullName" />
         </div>
 
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input id="email" type="email" placeholder="Enter your email" />
+          <input id="email" type="email" placeholder="Enter your email" [(ngModel)]="email" name="email"     />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input id="password" type="password" placeholder="Create a password" />
+          <input id="password" type="password" placeholder="Create a password" [(ngModel)]="password" name="password"    />
         </div>
 
         <button type="submit" class="signup-btn">Create Account</button>
