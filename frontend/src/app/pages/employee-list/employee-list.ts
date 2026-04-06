@@ -27,7 +27,7 @@ export class EmployeeList implements OnInit {
 
     this.employeeService.getEmployees().subscribe({
       next: (response) => {
-        this.employees = response.data?.getEmployees || [];
+        this.employees = response?.data?.getEmployees ?? [];
         this.loading = false;
       },
       error: () => {

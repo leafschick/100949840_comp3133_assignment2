@@ -16,23 +16,15 @@
         <p class="page-label">Employee Management</p>
         <h1>Employees List</h1>
         <p class="page-subtext">
-          View employee records, search by role or department, and manage staff details.
+          View employee records and manage staff details.
         </p>
       </div>
 
       <a routerLink="/add-employee" class="add-btn">+ Add Employee</a>
     </div>
 
-    <div class="toolbar">
-      <div class="search-group">
-        <input type="text" placeholder="Search by department or position" />
-        <button>Search</button>
-      </div>
-    </div>
-
     <p class="loading-message" *ngIf="loading">Loading employees...</p>
     <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
-
 
     <div class="table-card" *ngIf="!loading && !errorMessage">
       <table>
@@ -46,6 +38,7 @@
             <th>Actions</th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let employee of employees">
             <td>{{ employee.firstName }}</td>
@@ -53,15 +46,18 @@
             <td>{{ employee.email }}</td>
             <td>{{ employee.department }}</td>
             <td>{{ employee.position }}</td>
+
             <td class="actions">
-              <a [routerLink]="['/employee', employee.id]" class="view-btn">View</a>
-              <a [routerLink]="['/edit-employee', employee.id]" class="edit-btn">Edit</a>
+              <a [routerLink]="['/employee', employee.id || employee._id]" class="view-btn">View</a>
+              <a [routerLink]="['/edit-employee', employee.id || employee._id]" class="edit-btn">Edit</a>
               <button class="delete-btn" type="button">Delete</button>
             </td>
           </tr>
 
-          <tr *nglyIf="employees.length === 0">
-            <td colspan="6" class="no-data">No employees found. Please add new employees.</td>
+          <tr *ngIf="employees.length === 0">
+            <td colspan="6" class="no-data">
+              No employees found. Please add new employees.
+            </td>
           </tr>
         </tbody>
       </table>

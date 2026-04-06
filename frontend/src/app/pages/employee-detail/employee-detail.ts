@@ -1,40 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EmployeeService } from '../../services/employee.service';
 
-
 @Component({
   selector: 'app-employee-detail',
+  standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './employee-detail.html',
-  styleUrl: './employee-detail.css',
+  styleUrls: ['./employee-detail.css']
 })
-export class EmployeeDetail {
+export class EmployeeDetail implements OnInit {
   employee: any = null;
   errorMessage = '';
   loading = true;
 
-  constructor ( 
+  constructor(
     private route: ActivatedRoute,
-    private employeeService: EmployeeService    
-    ) {}
+    private employeeService: EmployeeService
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
+
     if (id) {
       this.loadEmployee(id);
     } else {
-      this.errorMessage = 'Invalid employee ID.';
+      this.errorMessage = 'Employee ID not found.';
       this.loading = false;
     }
   }
 
   loadEmployee(id: string) {
+    this.loading = true;
+    this.errorMessage = '';
+
     this.employeeService.getEmployeeById(id).subscribe({
       next: (response) => {
-        this.employee = response.data?.getemployeeById || null;
+        this.employee = response?.data?.getEmployeeById ?? null;
         this.loading = false;
+
         if (!this.employee) {
           this.errorMessage = 'Employee not found.';
         }
@@ -48,8 +53,8 @@ export class EmployeeDetail {
 
   getInitials(): string {
     if (!this.employee) return '';
-    const firstInitial = this.employee.firstName ? this.employee.firstName.charAt(0).toUpperCase() : '';
-    const lastInitial = this.employee.lastName ? this.employee.lastName.charAt(0).toUpperCase() : '';
-    return firstInitial + lastInitial;
+    const first = this.employee.firstName?.charAt(0) || '';
+    const last = this.employee.lastName?.charAt(0) || '';
+    return `${first}${last}`.toUpperCase();
   }
-} 
+}

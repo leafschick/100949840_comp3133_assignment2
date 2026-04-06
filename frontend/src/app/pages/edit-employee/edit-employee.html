@@ -21,39 +21,44 @@
       </div>
     </div>
 
-    <div class="form-card">
-      <form>
+    <p class="loading-message" *ngIf="loading">Loading employee data...</p>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="form-card" *ngIf="!loading">
+      <form (ngSubmit)="updateEmployee()">
         <div class="form-grid">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input id="firstName" type="text" value="Alice" />
+            <input id="firstName" type="text" [(ngModel)]="firstName" name="firstName" />
           </div>
 
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input id="lastName" type="text" value="Johnson" />
+            <input id="lastName" type="text" [(ngModel)]="lastName" name="lastName" />
           </div>
 
           <div class="form-group full-width">
             <label for="email">Email Address</label>
-            <input id="email" type="email" value="alice.johnson@test.com" />
+            <input id="email" type="email" [(ngModel)]="email" name="email" />
           </div>
 
           <div class="form-group">
             <label for="department">Department</label>
-            <input id="department" type="text" value="Operations" />
+            <input id="department" type="text" [(ngModel)]="department" name="department" />
           </div>
 
           <div class="form-group">
             <label for="position">Position</label>
-            <input id="position" type="text" value="Manager" />
+            <input id="position" type="text" [(ngModel)]="position" name="position" />
           </div>
 
           <div class="form-group full-width">
-            <label for="image">Update Profile Picture</label>
-            <input id="image" type="file" />
+            <label for="image">Profile Picture</label>
+            <input id="image" type="text" placeholder="Enter image URL" [(ngModel)]="image" name="image" />
           </div>
         </div>
+
+        <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
 
         <div class="button-row">
           <a routerLink="/employees" class="cancel-btn">Cancel</a>
