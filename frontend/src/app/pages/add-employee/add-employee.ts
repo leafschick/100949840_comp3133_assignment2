@@ -9,39 +9,48 @@ import { EmployeeService } from '../../services/employee.service';
   standalone: true,
   imports: [RouterLink, FormsModule, CommonModule],
   templateUrl: './add-employee.html',
-  styleUrls: ['./add-employee.css'],
+  styleUrls: ['./add-employee.css']
 })
 export class AddEmployee {
   firstName = '';
   lastName = '';
   email = '';
-  position = '';
   department = '';
+  position = '';
   image = '';
 
   errorMessage = '';
   successMessage = '';
 
-  constructor(private employeeService: EmployeeService, private router: Router) {}
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router
+  ) {}
 
   addEmployee() {
     this.errorMessage = '';
     this.successMessage = '';
 
-    if (!this.firstName || !this.lastName || !this.email || !this.position || !this.department) {
+    if (!this.firstName || !this.lastName || !this.email || !this.department || !this.position) {
       this.errorMessage = 'Please fill in all required fields.';
       return;
     }
 
-    this.employeeService.addEmployee({
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-      position: this.position,
-      department: this.department,
-      image: this.image
-    }).subscribe({
+    const employeeData = {
+      firstName: this.firstName.trim(),
+      lastName: this.lastName.trim(),
+      email: this.email.trim(),
+      department: this.department.trim(),
+      position: this.position.trim(),
+      image: this.image.trim()
+    };
+
+    console.log('Sending employee data:', employeeData);
+
+    this.employeeService.addEmployee(employeeData).subscribe({
       next: (response) => {
+        console.log('Add employee response:', response);
+
         if (response.data?.addEmployee) {
           this.successMessage = 'Employee added successfully!';
 
@@ -50,10 +59,16 @@ export class AddEmployee {
           }, 1000);
         } else if (response.errors?.length) {
           this.errorMessage = response.errors[0].message;
+        } else {
+          this.errorMessage = 'Failed to add employee.';
         }
       },
-      error: () => {
-        this.errorMessage = 'Failed to add employee.';
+      error: (error) => {
+        console.error('Add employee error:', error);
+        this.errorMessage =
+          error?.error?.errors?.[0]?.message ||
+          error?.message ||
+          'Failed to add employee.';
       }
     });
   }

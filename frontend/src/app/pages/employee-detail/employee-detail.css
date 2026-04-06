@@ -232,4 +232,19 @@
   .details-grid {
     grid-template-columns: 1fr;
   }
+
+  .loading-message {
+  color: #0b1a33;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.error-message {
+  color: #b42318;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 }

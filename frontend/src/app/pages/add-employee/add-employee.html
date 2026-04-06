@@ -22,38 +22,45 @@
     </div>
 
     <div class="form-card">
-      <form (submit)="addEmployee()">
+      <form (ngSubmit)="addEmployee()">
+
         <div class="form-grid">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input id="firstName" type="text" placeholder="Enter first name" [(ngModel)]="firstName" />
+            <input id="firstName" type="text" placeholder="Enter first name"
+              [(ngModel)]="firstName" name="firstName" />
           </div>
 
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input id="lastName" type="text" placeholder="Enter last name" [(ngModel)]="lastName" />
+            <input id="lastName" type="text" placeholder="Enter last name"
+              [(ngModel)]="lastName" name="lastName" />
           </div>
 
           <div class="form-group full-width">
             <label for="email">Email Address</label>
-            <input id="email" type="email" placeholder="Enter email address" [(ngModel)]="email" />
+            <input id="email" type="email" placeholder="Enter email address"
+              [(ngModel)]="email" name="email" />
           </div>
 
           <div class="form-group">
             <label for="department">Department</label>
-            <input id="department" type="text" placeholder="Enter department" [(ngModel)]="department" />
+            <input id="department" type="text" placeholder="Enter department"
+              [(ngModel)]="department" name="department" />
           </div>
 
           <div class="form-group">
             <label for="position">Position</label>
-            <input id="position" type="text" placeholder="Enter position" [(ngModel)]="position" />
+            <input id="position" type="text" placeholder="Enter position"
+              [(ngModel)]="position" name="position" />
           </div>
 
           <div class="form-group full-width">
             <label for="image">Profile Picture</label>
-            <input id="image" type="file" [(ngModel)]="image" name="image" />
+            <input id="image" type="text" placeholder="Enter image URL"
+              [(ngModel)]="image" name="image" />
           </div>
-        </div>
+        </div> 
 
         <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
         <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
@@ -62,6 +69,7 @@
           <a routerLink="/employees" class="cancel-btn">Cancel</a>
           <button type="submit" class="save-btn">Save Employee</button>
         </div>
+
       </form>
     </div>
   </div>

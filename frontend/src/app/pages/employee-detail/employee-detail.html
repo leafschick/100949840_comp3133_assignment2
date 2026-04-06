@@ -22,53 +22,58 @@
 
       <div class="header-actions">
         <a routerLink="/employees" class="back-btn">Back to Employees</a>
-        <a routerLink="/edit-employee/1" class="edit-btn">Edit Employee</a>
+        <a *ngIf="employee" [routerLink]="['/edit-employee', employee.id]" class="edit-btn">Edit Employee</a>
       </div>
     </div>
 
-    <div class="profile-card">
-      <div class="profile-left">
-        <div class="avatar">AJ</div>
-        <div>
-          <h2>Alice Johnson</h2>
-          <p class="role-text">Operations Manager</p>
-          <p class="email-text">alice.johnson@test.com</p>
+    <p class="loading-message" *ngIf="loading">Loading employee details...</p>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div *ngIf="employee && !loading" class="detail-content">
+      <div class="profile-card">
+        <div class="profile-left">
+          <div class="avatar">{{ getInitials() }}</div>
+          <div>
+            <h2>{{ employee.firstName }} {{ employee.lastName }}</h2>
+            <p class="role-text">{{ employee.position }}</p>
+            <p class="email-text">{{ employee.email }}</p>
+          </div>
         </div>
+
+        <div class="status-badge">Active Employee</div>
       </div>
 
-      <div class="status-badge">Active Employee</div>
-    </div>
+      <div class="details-grid">
+        <div class="detail-box">
+          <h3>Personal Information</h3>
+          <div class="info-row">
+            <span>First Name</span>
+            <strong>{{ employee.firstName }}</strong>
+          </div>
+          <div class="info-row">
+            <span>Last Name</span>
+            <strong>{{ employee.lastName }}</strong>
+          </div>
+          <div class="info-row">
+            <span>Email</span>
+            <strong>{{ employee.email }}</strong>
+          </div>
+        </div>
 
-    <div class="details-grid">
-      <div class="detail-box">
-        <h3>Personal Information</h3>
-        <div class="info-row">
-          <span>First Name</span>
-          <strong>Alice</strong>
-        </div>
-        <div class="info-row">
-          <span>Last Name</span>
-          <strong>Johnson</strong>
-        </div>
-        <div class="info-row">
-          <span>Email</span>
-          <strong>alice.johnson@test.com</strong>
-        </div>
-      </div>
-
-      <div class="detail-box">
-        <h3>Work Information</h3>
-        <div class="info-row">
-          <span>Department</span>
-          <strong>Operations</strong>
-        </div>
-        <div class="info-row">
-          <span>Position</span>
-          <strong>Manager</strong>
-        </div>
-        <div class="info-row">
-          <span>Status</span>
-          <strong>Active</strong>
+        <div class="detail-box">
+          <h3>Work Information</h3>
+          <div class="info-row">
+            <span>Department</span>
+            <strong>{{ employee.department }}</strong>
+          </div>
+          <div class="info-row">
+            <span>Position</span>
+            <strong>{{ employee.position }}</strong>
+          </div>
+          <div class="info-row">
+            <span>Status</span>
+            <strong>Active</strong>
+          </div>
         </div>
       </div>
     </div>
