@@ -16,15 +16,15 @@
         Sign in to access employee resources, manage records, and continue to your dashboard.
       </p>
 
-      <form>
+      <form (ngSubmit)="onLogin()">
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input id="email" type="email" placeholder="Enter your email" />
+          <input id="email" type="email" placeholder="Enter your email" [(ngModel)]="email" name="email" />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input id="password" type="password" placeholder="Enter your password" />
+          <input id="password" type="password" placeholder="Enter your password" [(ngModel)]="password" name="password" />
         </div>
 
         <button type="submit" class="login-btn">Login</button>
