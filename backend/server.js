@@ -1,26 +1,16 @@
 const express = require('express');
-const { ApolloServer, gql } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const typeDefs = require('./schema/typeDefs');
+const resolvers = require('./schema/resolvers');
 
 dotenv.config();
 
 const app = express();
 
 app.use(cors());
-
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => 'Backend is working!'
-  }
-};
 
 async function startServer() {
   try {
