@@ -16,6 +16,7 @@ import { TimeOffRequest } from './pages/time-off-request/time-off-request';
 import { IncidentReport } from './pages/incident-report/incident-report';
 import { DailyChecklist } from './pages/daily-checklist/daily-checklist';
 import { NewHireForm } from './pages/new-hire-form/new-hire-form';
+import { PayrollBenefits } from './pages/payroll-benefits/payroll-benefits';
 
 
 export const routes: Routes = [
@@ -34,5 +35,6 @@ export const routes: Routes = [
   {path: 'time-off-request', component: TimeOffRequest },
   {path: 'incident-report', component: IncidentReport },
   {path: 'daily-checklist', component: DailyChecklist },
-  {path: 'new-hire-form', component: NewHireForm }
+  {path: 'new-hire-form', component: NewHireForm },
+  {path: 'payroll-benefits', component: PayrollBenefits }
 ];

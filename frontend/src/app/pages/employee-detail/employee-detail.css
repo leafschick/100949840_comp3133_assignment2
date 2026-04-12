@@ -109,7 +109,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
@@ -118,38 +118,50 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  flex-wrap: wrap;
+  flex: 1;
+  min-width: 280px;
+}
+
+.avatar,
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  flex-shrink: 0;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
   background: #0b1a33;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 700;
+}
+
+.profile-image {
+  object-fit: cover;
+  display: block;
 }
 
 .profile-left h2 {
   font-size: 30px;
   color: #0b1a33;
-  margin-bottom: 8px;
+  margin: 0 0 8px 0;
 }
 
 .role-text {
   font-size: 17px;
   color: #5c667a;
-  margin-bottom: 6px;
+  margin: 0 0 6px 0;
 }
 
 .email-text {
   font-size: 15px;
   color: #7b8698;
   margin: 0;
+  word-break: break-word;
 }
 
 .status-badge {
@@ -159,6 +171,7 @@
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .details-grid {
@@ -202,6 +215,21 @@
   color: #0b1a33;
   font-size: 15px;
   text-align: right;
+  word-break: break-word;
+}
+
+.loading-message {
+  color: #0b1a33;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.error-message {
+  color: #b42318;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
@@ -225,26 +253,31 @@
     padding: 24px;
   }
 
+  .profile-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .profile-left h2 {
     font-size: 24px;
+  }
+
+  .avatar,
+  .profile-image {
+    width: 100px;
+    height: 100px;
   }
 
   .details-grid {
     grid-template-columns: 1fr;
   }
 
-  .loading-message {
-  color: #0b1a33;
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.error-message {
-  color: #b42318;
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
+  .info-row strong {
+    text-align: left;
+  }
 }
