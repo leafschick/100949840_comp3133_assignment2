@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
   private graphqlUrl = 'http://localhost:4000/graphql';
@@ -24,7 +24,7 @@ export class EmployeeService {
             image
           }
         }
-      `
+      `,
     };
 
     return this.http.post<any>(this.graphqlUrl, body);
@@ -45,7 +45,7 @@ export class EmployeeService {
           }
         }
       `,
-      variables: { id }
+      variables: { id },
     };
 
     return this.http.post<any>(this.graphqlUrl, body);
@@ -80,7 +80,7 @@ export class EmployeeService {
           }
         }
       `,
-      variables: employee
+      variables: employee,
     };
 
     return this.http.post<any>(this.graphqlUrl, body);
@@ -119,8 +119,8 @@ export class EmployeeService {
       `,
       variables: {
         id,
-        ...employee
-      }
+        ...employee,
+      },
     };
 
     return this.http.post<any>(this.graphqlUrl, body);
@@ -133,7 +133,7 @@ export class EmployeeService {
           deleteEmployee(id: $id)
         }
       `,
-      variables: { id }
+      variables: { id },
     };
 
     return this.http.post<any>(this.graphqlUrl, body);
@@ -156,16 +156,16 @@ export class EmployeeService {
       `,
       variables: {
         department: department || null,
-        position: position || null
-      }
+        position: position || null,
+      },
     };
 
     return this.http.post<any>(this.graphqlUrl, body);
   }
 
   submitAvailability(employeeName: string, availableDays: string[], preferredShift: string) {
-  const body = {
-    query: `
+    const body = {
+      query: `
       mutation SubmitAvailability($employeeName: String!, $availableDays: [String!]!, $preferredShift: String!) {
         submitAvailability(
           employeeName: $employeeName
@@ -180,19 +180,19 @@ export class EmployeeService {
         }
       }
     `,
-    variables: {
-      employeeName,
-      availableDays,
-      preferredShift
-    }
-  };
+      variables: {
+        employeeName,
+        availableDays,
+        preferredShift,
+      },
+    };
 
-   return this.http.post<any>(this.graphqlUrl, body);
-}
+    return this.http.post<any>(this.graphqlUrl, body);
+  }
 
-submitTimeOffRequest(employeeName: string, startDate: string, endDate: string, reason: string) {
-  const body = {
-    query: `
+  submitTimeOffRequest(employeeName: string, startDate: string, endDate: string, reason: string) {
+    const body = {
+      query: `
       mutation SubmitTimeOffRequest($employeeName: String!, $startDate: String!, $endDate: String!, $reason: String!) {
         submitTimeOffRequest(
           employeeName: $employeeName
@@ -209,25 +209,25 @@ submitTimeOffRequest(employeeName: string, startDate: string, endDate: string, r
         }
       }
     `,
-    variables: {
-      employeeName,
-      startDate,
-      endDate,
-      reason
-    }
-  };
+      variables: {
+        employeeName,
+        startDate,
+        endDate,
+        reason,
+      },
+    };
 
-   return this.http.post<any>(this.graphqlUrl, body);
-}
+    return this.http.post<any>(this.graphqlUrl, body);
+  }
 
-submitIncidentReport(
-  employeeName: string,
-  incidentDate: string,
-  incidentType: string,
-  description: string
-) {
-  const body = {
-    query: `
+  submitIncidentReport(
+    employeeName: string,
+    incidentDate: string,
+    incidentType: string,
+    description: string,
+  ) {
+    const body = {
+      query: `
       mutation SubmitIncidentReport(
         $employeeName: String!
         $incidentDate: String!
@@ -249,25 +249,25 @@ submitIncidentReport(
         }
       }
     `,
-    variables: {
-      employeeName,
-      incidentDate,
-      incidentType,
-      description
-    }
-  };
+      variables: {
+        employeeName,
+        incidentDate,
+        incidentType,
+        description,
+      },
+    };
 
-   return this.http.post<any>(this.graphqlUrl, body);
-}
+    return this.http.post<any>(this.graphqlUrl, body);
+  }
 
-submitDailyChecklist(
-  employeeName: string,
-  shiftType: string,
-  checklistItems: string[],
-  notes: string
-) {
-  const body = {
-    query: `
+  submitDailyChecklist(
+    employeeName: string,
+    shiftType: string,
+    checklistItems: string[],
+    notes: string,
+  ) {
+    const body = {
+      query: `
       mutation SubmitDailyChecklist(
         $employeeName: String!
         $shiftType: String!
@@ -289,28 +289,28 @@ submitDailyChecklist(
         }
       }
     `,
-    variables: {
-      employeeName,
-      shiftType,
-      checklistItems,
-      notes
-    }
-  };
+      variables: {
+        employeeName,
+        shiftType,
+        checklistItems,
+        notes,
+      },
+    };
 
-   return this.http.post<any>(this.graphqlUrl, body);
-}
+    return this.http.post<any>(this.graphqlUrl, body);
+  }
 
-submitNewHireForm(
-  fullName: string,
-  email: string,
-  phoneNumber: string,
-  position: string,
-  department: string,
-  startDate: string,
-  emergencyContact: string
-) {
-  const body = {
-    query: `
+  submitNewHireForm(
+    fullName: string,
+    email: string,
+    phoneNumber: string,
+    position: string,
+    department: string,
+    startDate: string,
+    emergencyContact: string,
+  ) {
+    const body = {
+      query: `
       mutation SubmitNewHireForm(
         $fullName: String!
         $email: String!
@@ -341,18 +341,17 @@ submitNewHireForm(
         }
       }
     `,
-    variables: {
-      fullName,
-      email,
-      phoneNumber,
-      position,
-      department,
-      startDate,
-      emergencyContact
-    }
-  };
+      variables: {
+        fullName,
+        email,
+        phoneNumber,
+        position,
+        department,
+        startDate,
+        emergencyContact,
+      },
+    };
 
-   return this.http.post<any>(this.graphqlUrl, body);
-}
-
+    return this.http.post<any>(this.graphqlUrl, body);
+  }
 }
