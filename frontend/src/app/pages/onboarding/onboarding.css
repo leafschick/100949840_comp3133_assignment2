@@ -1,0 +1,93 @@
+.employee-page {
+  min-height: 100vh;
+  background: #f3f5f8;
+  font-family: Arial, sans-serif;
+  color: #0f1f3d;
+}
+
+.employee-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c89211;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.page-header h1 {
+  font-size: 42px;
+  color: #0b1a33;
+  margin-bottom: 10px;
+}
+
+.page-subtext {
+  font-size: 17px;
+  color: #5c667a;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.onboarding-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.onboarding-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+  color: #0b1a33;
+}
+
+.onboarding-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4f5d73;
+  margin-bottom: 20px;
+}
+
+.onboarding-section {
+  margin-top: 24px;
+}
+
+.onboarding-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #0b1a33;
+}
+
+.onboarding-section ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.onboarding-section li {
+  margin-bottom: 8px;
+  color: #4f5d73;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .employee-container {
+    padding: 24px 20px;
+  }
+
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .onboarding-card {
+    padding: 20px;
+  }
+}
