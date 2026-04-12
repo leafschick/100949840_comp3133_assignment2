@@ -98,3 +98,9 @@
   color: #117a4b;
   font-weight: 600;
 }
+
+.error-message {
+  margin-top: 15px;
+  color: #b42318;
+  font-weight: 600;
+}

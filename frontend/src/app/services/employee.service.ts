@@ -162,4 +162,197 @@ export class EmployeeService {
 
     return this.http.post<any>(this.graphqlUrl, body);
   }
+
+  submitAvailability(employeeName: string, availableDays: string[], preferredShift: string) {
+  const body = {
+    query: `
+      mutation SubmitAvailability($employeeName: String!, $availableDays: [String!]!, $preferredShift: String!) {
+        submitAvailability(
+          employeeName: $employeeName
+          availableDays: $availableDays
+          preferredShift: $preferredShift
+        ) {
+          id
+          employeeName
+          availableDays
+          preferredShift
+          createdAt
+        }
+      }
+    `,
+    variables: {
+      employeeName,
+      availableDays,
+      preferredShift
+    }
+  };
+
+   return this.http.post<any>(this.graphqlUrl, body);
+}
+
+submitTimeOffRequest(employeeName: string, startDate: string, endDate: string, reason: string) {
+  const body = {
+    query: `
+      mutation SubmitTimeOffRequest($employeeName: String!, $startDate: String!, $endDate: String!, $reason: String!) {
+        submitTimeOffRequest(
+          employeeName: $employeeName
+          startDate: $startDate
+          endDate: $endDate
+          reason: $reason
+        ) {
+          id
+          employeeName
+          startDate
+          endDate
+          reason
+          createdAt
+        }
+      }
+    `,
+    variables: {
+      employeeName,
+      startDate,
+      endDate,
+      reason
+    }
+  };
+
+   return this.http.post<any>(this.graphqlUrl, body);
+}
+
+submitIncidentReport(
+  employeeName: string,
+  incidentDate: string,
+  incidentType: string,
+  description: string
+) {
+  const body = {
+    query: `
+      mutation SubmitIncidentReport(
+        $employeeName: String!
+        $incidentDate: String!
+        $incidentType: String!
+        $description: String!
+      ) {
+        submitIncidentReport(
+          employeeName: $employeeName
+          incidentDate: $incidentDate
+          incidentType: $incidentType
+          description: $description
+        ) {
+          id
+          employeeName
+          incidentDate
+          incidentType
+          description
+          createdAt
+        }
+      }
+    `,
+    variables: {
+      employeeName,
+      incidentDate,
+      incidentType,
+      description
+    }
+  };
+
+   return this.http.post<any>(this.graphqlUrl, body);
+}
+
+submitDailyChecklist(
+  employeeName: string,
+  shiftType: string,
+  checklistItems: string[],
+  notes: string
+) {
+  const body = {
+    query: `
+      mutation SubmitDailyChecklist(
+        $employeeName: String!
+        $shiftType: String!
+        $checklistItems: [String!]!
+        $notes: String
+      ) {
+        submitDailyChecklist(
+          employeeName: $employeeName
+          shiftType: $shiftType
+          checklistItems: $checklistItems
+          notes: $notes
+        ) {
+          id
+          employeeName
+          shiftType
+          checklistItems
+          notes
+          createdAt
+        }
+      }
+    `,
+    variables: {
+      employeeName,
+      shiftType,
+      checklistItems,
+      notes
+    }
+  };
+
+   return this.http.post<any>(this.graphqlUrl, body);
+}
+
+submitNewHireForm(
+  fullName: string,
+  email: string,
+  phoneNumber: string,
+  position: string,
+  department: string,
+  startDate: string,
+  emergencyContact: string
+) {
+  const body = {
+    query: `
+      mutation SubmitNewHireForm(
+        $fullName: String!
+        $email: String!
+        $phoneNumber: String!
+        $position: String!
+        $department: String!
+        $startDate: String!
+        $emergencyContact: String!
+      ) {
+        submitNewHireForm(
+          fullName: $fullName
+          email: $email
+          phoneNumber: $phoneNumber
+          position: $position
+          department: $department
+          startDate: $startDate
+          emergencyContact: $emergencyContact
+        ) {
+          id
+          fullName
+          email
+          phoneNumber
+          position
+          department
+          startDate
+          emergencyContact
+          createdAt
+        }
+      }
+    `,
+    variables: {
+      fullName,
+      email,
+      phoneNumber,
+      position,
+      department,
+      startDate,
+      emergencyContact
+    }
+  };
+
+   return this.http.post<any>(this.graphqlUrl, body);
+}
+
 }

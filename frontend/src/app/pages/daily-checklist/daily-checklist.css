@@ -139,4 +139,10 @@
   .form-container {
     padding: 20px;
   }
+
+  .error-message {
+    margin-top: 15px;
+    color: #b42318;
+    font-weight: 600;
+  }
 }
