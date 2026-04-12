@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './forms.html',
-  styleUrl: './forms.css',
+  styleUrls: ['./forms.css']
 })
 export class Forms {}

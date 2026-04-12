@@ -1,0 +1,142 @@
+.portal-page {
+  min-height: 100vh;
+  background: #f3f5f8;
+  font-family: Arial, sans-serif;
+  color: #0f1f3d;
+}
+
+.hero-banner {
+  background: #0b2a44;
+  color: white;
+  padding: 70px 50px 60px;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-label {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #bcd3e8;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero-subtext {
+  font-size: 20px;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #dbe6f2;
+  line-height: 1.6;
+}
+
+.resource-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px 70px;
+}
+
+.form-container {
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0b1a33;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #d9dee7;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0b2a44;
+  box-shadow: 0 0 0 3px rgba(11, 42, 68, 0.08);
+}
+
+.form-textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group.vertical {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1b2b45;
+}
+
+.submit-btn {
+  background: #f4c542;
+  color: #0b1a33;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #dfb233;
+}
+
+.success-message {
+  margin-top: 15px;
+  color: #117a4b;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-subtext {
+    font-size: 18px;
+  }
+
+  .resource-section {
+    padding: 40px 20px 60px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+}

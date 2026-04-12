@@ -1,0 +1,57 @@
+<div class="portal-page">
+  <section class="hero-banner">
+    <div class="hero-content">
+      <p class="hero-label">Forms</p>
+      <h1>Daily Checklist</h1>
+      <p class="hero-subtext">
+        Complete opening or closing tasks to help the Coffee House run smoothly each day.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-section">
+    <div class="form-container">
+      <label class="form-label">Employee Name</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter employee name"
+        [(ngModel)]="form.employeeName"
+        name="employeeName"
+      />
+
+      <label class="form-label">Shift Type</label>
+      <select
+        class="form-input"
+        [(ngModel)]="form.shiftType"
+        name="shiftType"
+      >
+        <option value="Opening">Opening</option>
+        <option value="Closing">Closing</option>
+      </select>
+
+      <label class="form-label">Checklist Items</label>
+      <div class="checkbox-group vertical">
+        <label><input type="checkbox" (change)="toggleItem($event, 'Coffee machine cleaned')" /> Coffee machine cleaned</label>
+        <label><input type="checkbox" (change)="toggleItem($event, 'Cash register counted')" /> Cash register counted</label>
+        <label><input type="checkbox" (change)="toggleItem($event, 'Tables cleaned')" /> Tables cleaned</label>
+        <label><input type="checkbox" (change)="toggleItem($event, 'Inventory checked')" /> Inventory checked</label>
+        <label><input type="checkbox" (change)="toggleItem($event, 'Doors locked')" /> Doors locked</label>
+      </div>
+
+      <label class="form-label">Notes</label>
+      <textarea
+        class="form-input form-textarea"
+        placeholder="Add any notes"
+        [(ngModel)]="form.notes"
+        name="notes"
+      ></textarea>
+
+      <button class="submit-btn" (click)="submitForm()">Submit</button>
+
+      <p *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </p>
+    </div>
+  </section>
+</div>

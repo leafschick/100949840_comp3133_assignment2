@@ -1,0 +1,57 @@
+<div class="portal-page">
+
+  <!-- Hero -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <p class="hero-label">Forms</p>
+      <h1>Employee Availability</h1>
+      <p class="hero-subtext">
+        Submit your weekly availability and preferred working hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="resource-section">
+    <div class="form-container">
+
+      <input
+        type="text"
+        placeholder="Employee Name"
+        class="form-input"
+        [(ngModel)]="form.employeeName"
+        name="employeeName"
+      />
+
+      <label class="form-label">Available Days</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" (change)="toggleDay($event, 'Monday')" /> Monday</label>
+        <label><input type="checkbox" (change)="toggleDay($event, 'Tuesday')" /> Tuesday</label>
+        <label><input type="checkbox" (change)="toggleDay($event, 'Wednesday')" /> Wednesday</label>
+        <label><input type="checkbox" (change)="toggleDay($event, 'Thursday')" /> Thursday</label>
+        <label><input type="checkbox" (change)="toggleDay($event, 'Friday')" /> Friday</label>
+        <label><input type="checkbox" (change)="toggleDay($event, 'Saturday')" /> Saturday</label>
+        <label><input type="checkbox" (change)="toggleDay($event, 'Sunday')" /> Sunday</label>
+      </div>
+
+      <label class="form-label">Preferred Shift</label>
+      <select
+        class="form-input"
+        [(ngModel)]="form.preferredShift"
+        name="preferredShift"
+      >
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+      </select>
+
+      <button class="submit-btn" (click)="submitForm()">Submit</button>
+
+      <p *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </p>
+
+    </div>
+  </section>
+
+</div>

@@ -53,6 +53,17 @@ const typeDefs = gql`
 
     deleteEmployee(id: ID!): String
   }
+
+  type AvailabilityRequest {
+    id: ID!
+    employeeName: String!
+    availableDays: [String]!
+    preferredShift: String!
+    createdAt: String
+    updatedAt: String
+  }
+
+
 `;
 
 module.exports = typeDefs;

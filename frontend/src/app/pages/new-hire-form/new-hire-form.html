@@ -1,0 +1,87 @@
+<div class="portal-page">
+  <section class="hero-banner">
+    <div class="hero-content">
+      <p class="hero-label">Forms</p>
+      <h1>New Hire Form</h1>
+      <p class="hero-subtext">
+        Add onboarding details for a new Coffee House team member.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-section">
+    <div class="form-container">
+      <label class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter full name"
+        [(ngModel)]="form.fullName"
+        name="fullName"
+      />
+
+      <label class="form-label">Email Address</label>
+      <input
+        type="email"
+        class="form-input"
+        placeholder="Enter email address"
+        [(ngModel)]="form.email"
+        name="email"
+      />
+
+      <label class="form-label">Phone Number</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter phone number"
+        [(ngModel)]="form.phoneNumber"
+        name="phoneNumber"
+      />
+
+      <label class="form-label">Position</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter position"
+        [(ngModel)]="form.position"
+        name="position"
+      />
+
+      <label class="form-label">Department</label>
+      <select
+        class="form-input"
+        [(ngModel)]="form.department"
+        name="department"
+      >
+        <option value="">Select department</option>
+        <option value="Management">Management</option>
+        <option value="Front of House">Front of House</option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Operations">Operations</option>
+      </select>
+
+      <label class="form-label">Start Date</label>
+      <input
+        type="date"
+        class="form-input"
+        [(ngModel)]="form.startDate"
+        name="startDate"
+      />
+
+      <label class="form-label">Emergency Contact</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter emergency contact"
+        [(ngModel)]="form.emergencyContact"
+        name="emergencyContact"
+      />
+
+      <button class="submit-btn" (click)="submitForm()">Submit</button>
+
+      <p *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </p>
+    </div>
+  </section>
+</div>

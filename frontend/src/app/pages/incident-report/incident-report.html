@@ -1,0 +1,60 @@
+<div class="portal-page">
+  <section class="hero-banner">
+    <div class="hero-content">
+      <p class="hero-label">Forms</p>
+      <h1>Incident Report</h1>
+      <p class="hero-subtext">
+        Record workplace incidents, safety concerns, or customer-related issues.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-section">
+    <div class="form-container">
+      <label class="form-label">Employee Name</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter employee name"
+        [(ngModel)]="form.employeeName"
+        name="employeeName"
+      />
+
+      <label class="form-label">Incident Date</label>
+      <input
+        type="date"
+        class="form-input"
+        [(ngModel)]="form.incidentDate"
+        name="incidentDate"
+      />
+
+      <label class="form-label">Incident Type</label>
+      <select
+        class="form-input"
+        [(ngModel)]="form.incidentType"
+        name="incidentType"
+      >
+        <option value="">Select incident type</option>
+        <option value="Safety Issue">Safety Issue</option>
+        <option value="Customer Complaint">Customer Complaint</option>
+        <option value="Equipment Problem">Equipment Problem</option>
+        <option value="Workplace Injury">Workplace Injury</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label class="form-label">Description</label>
+      <textarea
+        class="form-input form-textarea"
+        placeholder="Describe what happened"
+        [(ngModel)]="form.description"
+        name="description"
+      ></textarea>
+
+      <button class="submit-btn" (click)="submitForm()">Submit</button>
+
+      <p *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </p>
+    </div>
+  </section>
+</div>

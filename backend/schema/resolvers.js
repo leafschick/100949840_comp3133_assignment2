@@ -162,6 +162,7 @@ const resolvers = {
         throw new Error(error.message || 'Sorry, but we have failed to delete employee');
       }
     }
+
   }
 };
 
